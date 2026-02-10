@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÀGUIAS</title>
+    <style>
+  /* =========================================================
+     1) "RESET" BÁSICO
+     - Remove margens padrão do navegador em alguns elementos.
+     - Você colocou body, h1, h2 e p no mesmo bloco.
+     ========================================================= */
+  body,
+  h1,
+  h2,
+  p {
+    margin: 0;
+  }
+
+  /* =========================================================
+     2) ESTILO GERAL DA PÁGINA
+     - Define fonte e tamanho padrão
+     - Define fundo escuro no body
+     ========================================================= */
+  body {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0; /* redundante (já está no reset), mas não atrapalha */
+    background-color: #333; /* fundo cinza escuro */
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* =========================================================
+     3) LAYOUT PRINCIPAL (GRID)
+     - display: grid cria um "container de grid"
+     - max-width: 65vw limita a largura (65% da largura da tela)
+     - margin: 0 auto centraliza o bloco horizontalmente
+     ========================================================= */
+  .layout {
+    display: grid;
+    max-width: 65vw;
+    margin: 0 auto;
+  }
+
+  /* =========================================================
+     4) TOPO (HEADER COM IMAGEM DE FUNDO)
+     - background-image: coloca a foto no fundo
+     - background-size: cover faz a imagem "cobrir" a área
+     - background-position: center centraliza a imagem
+     - min-height: 60vh garante altura mínima (60% da altura da tela)
+     ========================================================= */
+  .topo {
+    background-image: url("IMG/AGUIA_3.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 60vh;
+  }
+
+  /* =========================================================
+     5) BLOCO DE TEXTO DENTRO DO TOPO (DESKTOP)
+     - padding: 20px 60px dá espaçamento interno
+       (20 em cima/baixo, 60 esquerda/direita)
+     ========================================================= */
+  .escondido_1 {
+    padding: 20px 60px;
+  }
+
+  /* =========================================================
+     6) TÍTULO GRANDE NO TOPO
+     - cor aqua e tamanho gigante (100px)
+     ========================================================= */
+  .escondido_1 h1 {
+    color: aqua;
+    font-size: 100px;
+  }
+
+  /* =========================================================
+     7) PARÁGRAFO NO TOPO
+     - cor branca
+     - fonte 30px
+     - text-align: justify deixa as linhas "retinhas" dos dois lados
+     ========================================================= */
+  .escondido_1 p {
+    color: white;
+    font-size: 30px;
+    text-align: justify;
+  }
+
+  /* =========================================================
+     8) CONTEÚDO (ÁREA DOS CARDS)
+     - display:flex cria linha flexível
+     - justify-content: space-evenly distribui espaços iguais
+     - flex-wrap: wrap permite quebrar em várias linhas
+     - background-color define a cor de fundo do bloco
+     ========================================================= */
+  .conteudo {
+    padding: 30px 0px; /* 30px em cima/baixo, 0 nas laterais */
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: rgb(1, 25, 34);
+  }
+
+  /* =========================================================
+     9) FOOTER
+     - flex e wrap: se precisar, quebra linha
+     - justify-content: center centraliza o conteúdo
+     - padding-top maior para "respirar" acima do botão
+     ========================================================= */
+  .footer {
+    padding: 10px;
+    padding-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(1, 25, 34);
+  }
+
+  /* =========================================================
+     10) BOTÃO/ लिंक DO FOOTER
+     - tira sublinhado (text-decoration: none)
+     - cria um "botão" com background, padding e borda arredondada
+     ========================================================= */
+  .footer a {
+    text-decoration: none;
+    color: rgb(1, 25, 34); /* cor do texto do botão */
+    background-color: orangered; /* cor do botão */
+    padding: 10px 30px; /* tamanho do botão */
+    font-size: 15px;
+    border-radius: 20px; /* arredonda */
+    font-weight: bold;
+  }
+
+  /* =========================================================
+     11) CARD
+     - max-width: 220px limita largura no desktop
+     - flex-grow: 1 permite crescer
+     - flex-shrink: 1 permite encolher
+       (na prática, isso ajuda os cards a se adaptar no flex)
+     - background white e fonte menor
+     ========================================================= */
+  .card {
+    max-width: 220px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    border-radius: 10px;
+    background-color: white;
+    font-size: 15px;
+  }
+
+  /* =========================================================
+     12) IMAGEM DO CARD
+     - min-width: 100% força a imagem ocupar no mínimo toda a largura
+       (uma forma de "esticar" horizontalmente)
+     - max-height: 140px limita a altura
+     - border-radius arredonda a imagem
+     
+     OBS: para evitar distorção, normalmente usa-se:
+     width: 100%; height: 140px; object-fit: cover;
+     mas eu NÃO alterei, só comentando a ideia.
+     ========================================================= */
+  .card img {
+    min-width: 100%;
+    max-height: 140px;
+    border-radius: 10px;
+  }
+
+  /* =========================================================
+     13) TÍTULO DO CARD
+     - padding dá espaçamento interno
+     - margin:0 (redundante, mas garante que não tenha margem)
+     ========================================================= */
+  .card h2 {
+    padding: 10px;
+    margin: 0;
+  }
+
+  /* =========================================================
+     14) TEXTO DO CARD
+     - padding para respirar
+     - justify para alinhar bem
+     ========================================================= */
+  .card p {
+    padding: 10px;
+    text-align: justify;
+  }
+
+  /* =========================================================
+     15) LINHA (hr)
+     - border grosso e laranja
+     - flex-basis: 90% faz o HR ocupar "quase a largura toda"
+       dentro do flex (como se fosse um item grandão)
+     - margin-bottom dá espaço abaixo
+     ========================================================= */
+  hr {
+    border: 3px solid orangered;
+    flex-basis: 90%;
+    margin-bottom: 50px;
+  }
+
+  /* =========================================================
+     16) TEXTO ALTERNATIVO PARA MOBILE
+     - no desktop fica escondido
+     ========================================================= */
+  .texto_escondido {
+    display: none;
+  }
+
+  /* =========================================================
+     17) MEDIA QUERY (TELAS PEQUENAS)
+     - Quando a tela tiver ATÉ 600px, aplica regras abaixo
+     ========================================================= */
+  @media (max-width: 600px) {
+
+    /* Ajusta padding e adiciona gap para separar cards */
+    .conteudo {
+      padding: 30px;
+      row-gap: 30px;
+    }
+
+    /* No mobile: card vira "100% largura" (um embaixo do outro) */
+    .card {
+      min-width: 100%;
+      height: auto;
+    }
+
+    /* No mobile: topo fica menor
+       OBS: aqui você usa height, mas no desktop usa min-height.
+       Se quiser consistência, poderia usar min-height também.
+       (não alterei, só comentando) */
+    .topo {
+      min-height: 30vw;
+    }
+
+    /* Esconde o texto grande do topo no mobile */
+    .escondido_1 {
+      display: none;
+    }
+
+    /* Esconde o hr do footer no mobile */
+    .footer hr {
+      display: none;
+    }
+
+    /* Mostra o texto alternativo no mobile */
+    .texto_escondido {
+      display: block;
+    }
+
+    /* Estiliza o título e texto desse bloco (cor branca) */
+    .texto_escondido h2 {
+      color: white;
+    }
+
+    .texto_escondido p {
+      color: white;
+    }
+  }
+</style>
+
+</head>
+
+<body>
+    <div class="layout">
+        <header class="topo">
+            <div class="escondido_1">
+                <h1>ÁGUIAS</h1>
+                <p>Uma águia é o nome comun de diversas aves de rapina carnívoras e geralmente de grande porte, caracterizadas pela sua força,acuidadevisual e havilidade de voo, e não um grupo taxonómico específico.</p>
+            </div>
+
+        </header>
+        <main class="conteudo">
+            <div class="texto_escondido">
+                <h2>ÁGUIAS</h2>
+                <p>Uma águia é o nome comun de diversas aves de rapina carnívoras e geralmente de grande porte, caracterizadas pela sua força,acuidadevisual e havilidade de voo, e não um grupo taxonómico específico.</p>
+            </div>
+            <hr>
+            <div class="card"><img src="./IMG/AGUI_1.jpg" alt="">
+
+                <h2>AGUIA1 </h2>
+                <p>Existem mais de 70 especie de aguias em todo o mundo, como aharpia, uma das maiores e mais perigosas do mundo, e a aguia-pescadora, adptada para a pesca.</p>
+            </div>
+            <div class="card"><img src="./IMG/AGUIA_2.jpg" alt="">
+                <h2>AGUIA1 </h2>
+                <p>Existem mais de 70 especie de aguias em todo o mundo, como aharpia, uma das maiores e mais perigosas do mundo, e a aguia-pescadora, adptada para a pesca.</p>
+            </div>
+            <div class="card"><img src="./IMG/AGUIa_4.jpg" alt="">
+                <h2>AGUIA1 </h2>
+                <p>Existem mais de 70 especie de aguias em todo o mundo, como aharpia, uma das maiores e mais perigosas do mundo, e a aguia-pescadora, adptada para a pesca.</p>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <hr>
+            <a href="#">CONTATO</a>
+        </footer>
+    </div>
+    </div>
+</body>
+
+</html>
