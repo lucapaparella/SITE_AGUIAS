@@ -1,50 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ÀGUIAS</title>
-   <link rel="stylesheet" href="./CSS/estilo.css">
+    <link rel="stylesheet" href="./CSS/estilo.css" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div class="layout">
-        <header class="topo">
-            <div class="escondido_1">
-                <h1>ÁGUIAS</h1>
-                <p>Uma águia é o nome comun de diversas aves de rapina carnívoras e geralmente de grande porte, caracterizadas pela sua força,acuidadevisual e havilidade de voo, e não um grupo taxonómico específico.</p>
-            </div>
+      <header class="topo">
+        <div class="escondido_1">
+          <h1>ÁGUIAS</h1>
+          <p>
+            Uma águia é o nome comun de diversas aves de rapina carnívoras e
+            geralmente de grande porte, caracterizadas pela sua
+            força,acuidadevisual e havilidade de voo, e não um grupo taxonómico
+            específico.
+          </p>
+        </div>
+      </header>
+      <main class="conteudo">
+        <div class="texto_escondido">
+          <h2>ÁGUIAS</h2>
+          <p>
+            Uma águia é o nome comun de diversas aves de rapina carnívoras e
+            geralmente de grande porte, caracterizadas pela sua
+            força,acuidadevisual e havilidade de voo, e não um grupo taxonómico
+            específico.
+          </p>
+        </div>
+        <hr />
+        <div class="card">
+          <img src="./IMG/aguia_1.jpg" alt="" />
 
-        </header>
-        <main class="conteudo">
-            <div class="texto_escondido">
-                <h2>ÁGUIAS</h2>
-                <p>Uma águia é o nome comun de diversas aves de rapina carnívoras e geralmente de grande porte, caracterizadas pela sua força,acuidadevisual e havilidade de voo, e não um grupo taxonómico específico.</p>
-            </div>
-            <hr>
-            <div class="card"><img src="./IMG/aguia_1.jpg" alt="">
+          <h2>AGUIA1</h2>
+          <p>
+            Existem mais de 70 especie de aguias em todo o mundo, como aharpia,
+            uma das maiores e mais perigosas do mundo, e a aguia-pescadora,
+            adptada para a pesca.
+          </p>
+        </div>
+        <div class="card">
+          <img src="./IMG/aguia_2.jpg" alt="" />
+          <h2>AGUIA1</h2>
+          <p>
+            Existem mais de 70 especie de aguias em todo o mundo, como aharpia,
+            uma das maiores e mais perigosas do mundo, e a aguia-pescadora,
+            adptada para a pesca.
+          </p>
+        </div>
+        <div class="card">
+          <img src="./IMG/aguia_4.jpg" alt="" />
+          <h2>AGUIA1</h2>
+          <p>
+            Existem mais de 70 especie de aguias em todo o mundo, como aharpia,
+            uma das maiores e mais perigosas do mundo, e a aguia-pescadora,
+            adptada para a pesca.
+          </p>
+        </div>
+      </main>
 
-                <h2>AGUIA1 </h2>
-                <p>Existem mais de 70 especie de aguias em todo o mundo, como aharpia, uma das maiores e mais perigosas do mundo, e a aguia-pescadora, adptada para a pesca.</p>
-            </div>
-            <div class="card"><img src="./IMG/aguia_2.jpg" alt="">
-                <h2>AGUIA1 </h2>
-                <p>Existem mais de 70 especie de aguias em todo o mundo, como aharpia, uma das maiores e mais perigosas do mundo, e a aguia-pescadora, adptada para a pesca.</p>
-            </div>
-            <div class="card"><img src="./IMG/aguia_4.jpg" alt="">
-                <h2>AGUIA1 </h2>
-                <p>Existem mais de 70 especie de aguias em todo o mundo, como aharpia, uma das maiores e mais perigosas do mundo, e a aguia-pescadora, adptada para a pesca.</p>
-            </div>
-        </main>
+      <footer class="footer">
+        <hr />
 
-        <footer class="footer">
-            <hr>
-            <a href="#">CONTATO</a>
-        </footer>
+        <form class="card-1" action="dados.php" method="post">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Ex. Luca" />
+          <label for="sobrenome">Sobrenome</label>
+          <input
+            type="text"
+            name="sobrenome"
+            id="sobrenome"
+            placeholder="Ex. Paparella"
+          />
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Ex luca@gmail.com"
+          />
+          <label for="msg">Mensagem</label>
+          <textarea name="msg" id="msg" placeholder="Escreva aqui"></textarea>
+
+          <div class="btn">
+            <button>Enviar</button>
+          </div>
+        </form>
+      </footer>
     </div>
-    </div>
-</body>
-
+  </body>
 </html>
